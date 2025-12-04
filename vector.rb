@@ -267,10 +267,8 @@ class Vector # rubocop:disable Metrics/ClassLength
     def rotate!(vec, alpha)
       new_angle = angle(vec) + alpha
       len = length(vec)
-
       vec.x = Math.cos(new_angle) * len
       vec.y = Math.sin(new_angle) * len
-
       vec
     end
 
@@ -507,7 +505,6 @@ class Vector # rubocop:disable Metrics/ClassLength
 
   def lerp(to, amount)
     amount = 1.0 if amount > 1.0
-
     new(
       (self.x + (to.x - self.x)) * amount,
       (self.y + (to.y - self.y)) * amount
@@ -516,10 +513,8 @@ class Vector # rubocop:disable Metrics/ClassLength
 
   def lerp!(to, amount)
     amount = 1.0 if amount > 1.0
-
     self.x += (to.x - self.x) * amount
     self.y += (to.y - self.y) * amount
-
     self
   end
 
