@@ -33,13 +33,12 @@ There are two supported ways to use this in your project:
 ### License & Philosophy
 
 As mentioned above, all code in this repository is released to the public
-domain under the [Unlicense](./LICENSE). Do with it as you please.
+domain under the [Unlicense](./LICENSE). Do with it as you please, no
+attribution required (though appreciated!).
 
 Each tool should be as self-contained as possible, including documentation and
 examples. Copying the file you want should be all you need. This is to make
 using these in your project as simple as possible.
-
-Attribution is **not required**, but definitely appreciated.
 
 Please consider sharing any improvements you make to this code. I (and likely
 the Ruby gamedev community) will definitely appreciate it. It's not your game's
