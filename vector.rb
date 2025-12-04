@@ -23,7 +23,7 @@
 #
 # For more information, please refer to <https://unlicense.org>
 
-# A (probably inefficient) 2D vector implementation. (Intended for use with DragonRuby GTK)
+# A 2D vector implementation. (Intended for use with DragonRuby GTK)
 #
 # Because DRGTK arrays, hashes, and entities respond to `x`, `y`, these utils
 # use duck typing for its operations. You don't have to pass in vectors, you
