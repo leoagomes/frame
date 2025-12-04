@@ -27,8 +27,8 @@ There are two supported ways to use this in your project:
    This lets you include only what you need.
 2. Clone this repository in a subdirectory in your project and `require` from it.
    This adds all tools to your project.
-   When using DragonRuby, we recommend cloning it into `lib/frame` and
-   `require 'lib/frame/<tool>.rb'`.
+   When using DragonRuby, we recommend cloning it (or rather adding it as a
+   submodule) in `lib/frame` and `require 'lib/frame/<tool>.rb'`.
 
 ### License & Philosophy
 
