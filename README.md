@@ -24,11 +24,11 @@ Currently, the following are available in `frame`'s toolbox:
 
 There are two supported ways to use this in your project:
 1. Copy one of the files you need into your project and `require` it.
-  - This lets you include only what you need.
+   This lets you include only what you need.
 2. Clone this repository in a subdirectory in your project and `require` from it.
-  - This adds all tools to your project.
-  - When using DragonRuby, we recommend cloning it into `lib/frame` and
-    `require 'lib/frame/<tool>.rb'`.
+   This adds all tools to your project.
+   When using DragonRuby, we recommend cloning it into `lib/frame` and
+   `require 'lib/frame/<tool>.rb'`.
 
 ### License & Philosophy
 
