@@ -79,7 +79,7 @@ class Spatial
       @max_entries = max_entries
       @cell_size = 2 * max_entries
       @cell_starts = Array.new(@cell_size + 1, 0)
-      @cell_entries = Array.new(@max_entries, 0)
+      @cell_entries = Array.new(@max_entries, nil)
     end
 
     def populate(entities)
@@ -121,8 +121,11 @@ class Spatial
         start = @cell_starts[cell_position]
         finish = @cell_starts[cell_position + 1]
 
-        for index in start..finish
-          yield @cell_entries[index]
+        for index in start...finish
+          candidate = @cell_entries[index]
+          next unless candidate
+
+          yield candidate
         end
       end
     end
@@ -141,7 +144,7 @@ class Spatial
 
     def clear_cells!
       @cell_starts.fill(0)
-      @cell_entries.fill(0)
+      @cell_entries.fill(false)
     end
 
     def determine_cell_sizes!(entities)
@@ -168,8 +171,8 @@ class Spatial
       x2, y2 = entity.x + entity.w, entity.y + entity.h
       x1, y1 = cell_coordinate(x1), cell_coordinate(y1)
       x2, y2 = cell_coordinate(x2), cell_coordinate(y2)
-      for xi in x1...x2
-        for yi in y1...y2
+      for xi in x1..x2
+        for yi in y1..y2
           cell_position = hash_coordinates(xi, yi)
           yield cell_position
         end
@@ -178,7 +181,7 @@ class Spatial
 
     def hash_coordinates(x, y)
       h = (x * 9283711) ^ (y * 689287499)
-      Math.abs(h) % @cell_size
+      h.abs % @cell_size
     end
 
     def cell_coordinate(c)
