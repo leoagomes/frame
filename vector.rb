@@ -81,6 +81,11 @@ class Vector # rubocop:disable Metrics/ClassLength
       new(vec.x, vec.y)
     end
 
+    def from(vec)
+      return vec if vec.is_a?(Vector)
+      new(vec.x, vec.y)
+    end
+
     def to_polar(vec)
       [angle(vec), length(vec)]
     end
@@ -291,6 +296,15 @@ class Vector # rubocop:disable Metrics/ClassLength
       vec
     end
 
+    def negate(vec)
+      new(-vec.x, -vec.y)
+    end
+
+    def negate!(vec)
+      vec.x = -vec.x
+      vec.y = -vec.y
+    end
+
     def as_array(vec)
       [vec.x, vec.y]
     end
@@ -439,6 +453,19 @@ class Vector # rubocop:disable Metrics/ClassLength
   end
   alias normalized! normalize!
 
+  def negate
+    new(-x, -y)
+  end
+  alias negated negate
+  alias -@ negate
+
+  def negate!
+    self.x = -self.x
+    self.y = -self.y
+    self
+  end
+  alias negated! negate!
+
   def length_squared
     (x * x) + (y * y)
   end
@@ -532,6 +559,13 @@ class Vector # rubocop:disable Metrics/ClassLength
   def to_h
     { x: x, y: y }
   end
+
+  def to_a
+    [x, y]
+  end
+  alias to_ary      to_a
+  alias coords      to_a
+  alias coordinates to_a
 
   def ==(other)
     self.x == other.x && self.y == other.y
