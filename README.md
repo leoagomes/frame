@@ -10,7 +10,7 @@ as possible, with a primary focus on [DragonRuby GTK](https://dragonruby.org).
 
 Currently, the following are available in `frame`'s toolbox:
 - [`vector.rb`](./vector.rb) - A `Vector` class with 2D vector math.
-- `spatial.rb` - _coming soon_
+- [`spatial.rb`](./spatial.rb) - A spatial partitioning class for AABBs.
 
 > **Author's note:**
 >
