@@ -322,7 +322,7 @@ class Vector # rubocop:disable Metrics/ClassLength
     end
 
     def contains?(a, b)
-      angle(a) == angle(other) && length(a) >= length(other)
+      angle(a) == angle(b) && length(a) >= length(b)
     end
   end
 
