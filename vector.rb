@@ -56,6 +56,8 @@
 # # x is now [50, 70]
 # # y is unmodified
 #
+
+# rubocop:disable Naming/MethodParameterName
 class Vector # rubocop:disable Metrics/ClassLength
   attr_accessor :x, :y
 
@@ -83,6 +85,7 @@ class Vector # rubocop:disable Metrics/ClassLength
 
     def from(vec)
       return vec if vec.is_a?(Vector)
+
       new(vec.x, vec.y)
     end
 
@@ -332,14 +335,14 @@ class Vector # rubocop:disable Metrics/ClassLength
   end
 
   def add(other)
-    new(self.x + other.x,
-        self.y + other.y)
+    new(x + other.x,
+        y + other.y)
   end
   alias + add
 
   def add_scalar(scalar)
-    new(self.x + scalar,
-        self.y + scalar)
+    new(x + scalar,
+        y + scalar)
   end
 
   def add!(value)
@@ -551,8 +554,6 @@ class Vector # rubocop:disable Metrics/ClassLength
       x
     when :y, 1
       y
-    else
-      nil
     end
   end
 
@@ -589,3 +590,4 @@ class Vector # rubocop:disable Metrics/ClassLength
     self.class.new(x, y)
   end
 end
+# rubocop:enable Naming/MethodParameterName
