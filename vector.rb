@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This is free and unencumbered software released into the public domain.
 #
 # Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -55,7 +57,6 @@
 # Vector.add!(x, y)
 # # x is now [50, 70]
 # # y is unmodified
-#
 
 # rubocop:disable Naming/MethodParameterName
 class Vector # rubocop:disable Metrics/ClassLength
