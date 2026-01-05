@@ -49,7 +49,7 @@
 #            `query_unique`.
 #
 # Example:
-# spatial = Spatial::Hash.new(32, 100)
+# spatial = Spatial::Hash.new(spacing: 32, max_entries: 100)
 # ents = [[10, 10, 16, 16], # x = 10, y = 10, width = 16, height = 16
 #         [20, 20, 8, 8]]   # x = 20, y = 20, width = 8, height = 8
 # spatial.populate(ents)
@@ -74,7 +74,7 @@ class Spatial
   class Hash
     attr_reader :spacing, :max_entries
 
-    def initialize(spacing, max_entries)
+    def initialize(spacing:, max_entries:)
       @spacing = spacing
       @max_entries = max_entries
       @cell_size = 2 * max_entries
